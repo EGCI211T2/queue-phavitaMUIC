@@ -48,12 +48,13 @@ int Queue::dequeue(){
      /* Add head and tail for me please */
      --size;
     delete t;  
+    cout << "dequeing " << value << endl;
     return value;
     
   }
 }
 else
-  cout<<"Empty queue";
+  cout<<"Empty Queue"<<endl;
   return -1;
 }
 
@@ -65,13 +66,13 @@ Queue::Queue(){
     tailPtr=NULL;
     
 }
+
 Queue::~Queue(){
-      cout<<"Dequeue all"<<endl;
-      int n=size;
-      for(int i=0;i<n;i++)
-      dequeue();
-    //delete all remaning Queue (i.e. DQ all) 
-    
+    cout << "Clearing queue" << endl;
+
+    while(size > 0){
+        dequeue();
+    }
 }
 
 
